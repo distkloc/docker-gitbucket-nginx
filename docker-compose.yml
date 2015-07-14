@@ -1,0 +1,16 @@
+gitbucket:
+  restart: always
+  image: f99aq8ove/gitbucket
+  ports:
+    - '8080:8080'
+  volumes:
+    - /var/lib/gitbucket:/gitbucket
+
+nginx:
+  restart: always
+  build: nginx 
+  ports:
+    - '443:443'
+  links:
+    - gitbucket
+
