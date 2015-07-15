@@ -13,4 +13,7 @@ nginx:
     - '443:443'
   links:
     - gitbucket
+  volumes:
+    - /var/log/nginx
+    - /var/cache/nginx
 
